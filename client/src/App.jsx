@@ -39,14 +39,15 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/chatbot" element={<ChatBot />} />
           <Route path="/faqs" element={<Faq />} />
-          <Route path="/translate" element={<Translate/>}/>
-          <Route path="/about" element={<AboutPage/>}/>
+          <Route path="/translate" element={<Translate />} />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="*" element={<PageNotFound />} />
         </>
       )}
       {!logIn && (
         <>
           <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
           <Route path="*" element={<PageNotFound />} />
         </>
       )}
