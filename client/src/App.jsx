@@ -13,6 +13,9 @@ import PageNotFound from './pages/PageNotFound';
 import Home from './pages/Home';
 import ChatBot from './pages/ChatBot';
 import { useNavigate } from 'react-router-dom';
+import Faq from './pages/Faq';
+import Translate from './pages/Translate';
+import AboutPage from './pages/AboutPage';
 
 function App() {
   const navig = useNavigate();
@@ -30,26 +33,25 @@ function App() {
 
   return (
     <Routes>
-      {logIn && (<>
-        <Route path='/' element={<Home/>}/>
-        <Route path='/login' element={<Login/>}/>
-        <Route path='/chatbot' element={<ChatBot/>}/>
-        <Route path='*' element={<PageNotFound/>}/>
-        
-      </>
-        )   
-      }
-      {
-        !logIn && (
-          <>
-          <Route path='/' element={<Home/>}/>
-          <Route path='*' element={<PageNotFound/>}/>
-          </>
-        )
-      }
-      
+      {logIn && (
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/chatbot" element={<ChatBot />} />
+          <Route path="/faqs" element={<Faq />} />
+          <Route path="/translate" element={<Translate/>}/>
+          <Route path="/about" element={<AboutPage/>}/>
+          <Route path="*" element={<PageNotFound />} />
+        </>
+      )}
+      {!logIn && (
+        <>
+          <Route path="/" element={<Home />} />
+          <Route path="*" element={<PageNotFound />} />
+        </>
+      )}
     </Routes>
-  )
+  );
 }
 
 export default App
